@@ -2,6 +2,7 @@ package demo;
 
 import com.hazelcast.client.HazelcastClient;
 import com.hazelcast.client.config.ClientConfig;
+import com.hazelcast.config.TcpIpConfig;
 import com.hazelcast.core.HazelcastInstance;
 
 import io.vertx.core.Vertx;
@@ -15,6 +16,7 @@ public class LauncherClient {
 	public static void main(String args[]) {
 		ClientConfig config = new ClientConfig();
 		String[] addresses = { "195.201.90.61" + ":" + "5701" };
+		config.getGroupConfig().setName("staging").setPassword("prasanth");
 		config.getNetworkConfig().setSmartRouting(true).addAddress(addresses);
 
 		// start Hazelcast client
