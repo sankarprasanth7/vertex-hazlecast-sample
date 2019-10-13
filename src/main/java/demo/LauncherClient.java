@@ -14,7 +14,7 @@ public class LauncherClient {
 	public static EventBus clusterEB = null;
 	public static void main(String args[]) {
 		ClientConfig config = new ClientConfig();
-		String[] addresses = { "195.201.90.61" + ":" + "5701" };
+		String[] addresses = { "127.0.0.1" + ":" + "5701" };
 		config.getNetworkConfig().setSmartRouting(true).addAddress(addresses);
 
 		// start Hazelcast client
@@ -30,5 +30,6 @@ public class LauncherClient {
 				System.out.println("failed");
 			}
 		});
+		clusterEB.send("worker.count", 10);
 	}
 }

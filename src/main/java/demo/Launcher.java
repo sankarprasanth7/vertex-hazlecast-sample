@@ -17,7 +17,7 @@ public class Launcher {
 	public static void main(String[] args) {
 		ClusterManager mgr = new HazelcastClusterManager();
 
-		VertxOptions options = new VertxOptions().setClusterManager(mgr).setClusterHost("195.201.90.61");
+		VertxOptions options = new VertxOptions().setClusterManager(mgr).setClusterHost("0.0.0.0");
 		Vertx.clusteredVertx(options, res -> {
 			if (res.succeeded()) {
 				Vertx vertx = res.result();
