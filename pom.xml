@@ -12,7 +12,7 @@
 	<properties>
 		<vertx-version>3.5.0</vertx-version>
 		<vertx-hazelcast-version>3.5.0</vertx-hazelcast-version>
-		<hazelcast-version>3.8.2</hazelcast-version>
+		<hazelcast-version>5.1</hazelcast-version>
 	</properties>
 
 	<dependencies>
